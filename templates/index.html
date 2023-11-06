@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search Page
+{% endblock %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+{% block body %}
+<div>
+
+    <form action="/youtube_scrap" method="POST">
+        <div class="form-group col-md-6 ms-auto me-auto">
+            <div class="small text-info">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="content"
+                        id="content"
+                        placeholder="https://www.youtube.com/@youtube_channel_name/videos">
+                    <button type="submit" class="btn btn-outline-secondary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

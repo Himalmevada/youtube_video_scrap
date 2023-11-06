@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Result Page
+{% endblock %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+{% block body %}
+
+<div class="card rounded-0">
+    <div class="card-body p-0">
+        <h4 class="card-title text-center my-3">Youtube Videos</h4>
+        <table class="table table-hover table-responsive m-0">
+            <thead class="thead-inverse">
+
+                <tr>
+                    <th>Channel Name</th>
+                    <th>Thumbnail</th>
+                    <th>Title</th>
+                    <th>Url</th>
+                    <th>Views</th>
+                    <th>Posted</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for data in csv_data %}
+
+                <tr>
+                    <td>{{data['Channel_Name']}}</td>
+                    <td><img src="{{data['Thumbnail']}}" class="img-thumbnail"></td>
+                    <td>{{data['Title']}}</td>
+                    <td><a href="{{data['Url']}}">{{data['Url']}}</a></td>
+                    <td>{{data['Views']}}</td>
+                    <td>{{data['Posted']}} </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}
